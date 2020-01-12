@@ -1,9 +1,12 @@
 [![Build Status](https://travis-ci.org/telemark/micro-svarut.svg?branch=master)](https://travis-ci.org/telemark/micro-svarut)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
-[![Greenkeeper badge](https://badges.greenkeeper.io/telemark/micro-svarut.svg)](https://greenkeeper.io/)
+
 # micro-svarut
-ldap auth microservice
-## config docker.env
+
+microservice for svarut forsendelsesservice v5
+
+## config now.json:env
+
 ```bash
 NODE_ENV=production
 JWT_SECRET=Louie Louie, oh no, I got to go Louie Louie, oh no, I got to go
@@ -13,8 +16,11 @@ PAPERTRAIL_HOSTNAME=micro-svarut
 PAPERTRAIL_HOST=logs.papertrailapp.com
 PAPERTRAIL_PORT=12345
 ```
+
 ## API
+
 ### POST ```/```
+
 ```json
 {
   "title": "SvarUt testdokument",
@@ -53,6 +59,37 @@ PAPERTRAIL_PORT=12345
   }
 }
 ```
+
+## Development
+
+Add a local `.env` file.
+
+```bash
+NODE_ENV=development
+JWT_SECRET=Louie Louie, oh no, I got to go Louie Louie, oh no, I got to go
+SVARUT_URL=https://username:password@test.svarut.ks.no/tjenester/forsendelseservice/ForsendelsesServiceV5
+SVARUT_ACTION=http://www.ks.no/svarut/services/ForsendelsesServiceV5/sendForsendelse
+PAPERTRAIL_HOSTNAME=micro-svarut
+PAPERTRAIL_HOST=logs.papertrailapp.com
+PAPERTRAIL_PORT=12345
+```
+
+Start the development server
+
+```
+$ now dev
+```
+
+## Deploy
+
+- Make sure all secrets are available on the ZEIT organization
+- Run the deploy script
+
+```
+$ npm run deploy
+```
+
 ## License
+
 [MIT](LICENSE)
-![alt text](https://robots.kebabstudios.party/micro-svarut.png "Robohash image of micro-svarut")
+
