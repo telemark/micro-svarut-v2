@@ -1,7 +1,5 @@
 'use strict'
 
-const readFileSync = require('fs').readFileSync
-const marked = require('marked')
 const { parse } = require('url')
 const { json, send } = require('micro')
 const svarUt = require('svarut')
@@ -35,9 +33,7 @@ module.exports = async (req, response) => {
       }
     }
   } else {
-    response.setHeader('Content-Type', 'text/html')
-    const readme = readFileSync('./README.md', 'utf-8')
-    const html = marked(readme)
-    send(response, 200, html)
+    response.status(405)
+    response.send('Method not allowed')
   }
 }

@@ -33,7 +33,7 @@
     "setup": "npm install",
     "standard-fix": "standard --fix",
     "start": "micro",
-    "now-deploy": "npm test && now --production"
+    "now-deploy": "npm test && now --prod"
   },
   "keywords": [
     "microservice",
