@@ -25,7 +25,6 @@ module.exports = async (req, response) => {
         action: config.SVARUT_ACTION
       }
 
-      console.log(formatedData)
       try {
         const id = await svarUt(formatedData)
         logger('info', ['ID from svarut', id])
