@@ -1,7 +1,7 @@
 {
-  "name": "micro-svarut",
-  "description": "svarut microservice",
-  "version": "2.0.1",
+  "name": "micro-svarut-v2",
+  "description": "svarut microservice for forsendelsesservice v5",
+  "version": "1.0.0",
   "license": "MIT",
   "private": true,
   "author": {
@@ -14,21 +14,26 @@
       "name": "Geir Gåsodden",
       "email": "geir.gasodden@pythonia.no",
       "url": "https://github.com/zrrrzzt"
+    },
+    {
+      "name": "Mats Andreassen",
+      "email": "mats.andreassen@hotmail.com",
+      "url": "https://github.com/matsand"
     }
   ],
   "main": "index.js",
   "engines": {
-    "node": ">=7.7.3"
+    "node": ">=12.14.1"
   },
   "scripts": {
-    "test": "standard && nsp check && ava",
+    "test": "standard && npm audit && ava",
     "test-offline": "standard && ava",
     "coverage": "nyc ava",
     "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
     "setup": "npm install",
     "standard-fix": "standard --fix",
     "start": "micro",
-    "now-deploy": "npm test && now --npm && now alias"
+    "now-deploy": "npm test && now --production"
   },
   "keywords": [
     "microservice",
@@ -38,17 +43,16 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/telemark/micro-svarut.git"
+    "url": "https://github.com/telemark/micro-svarut-v2.git"
   },
   "bugs": {
-    "url": "https://github.com/telemark/micro-svarut/issues"
+    "url": "https://github.com/telemark/micro-svarut-v2/issues"
   },
-  "homepage": "https://github.com/telemark/micro-svarut",
+  "homepage": "https://github.com/telemark/micro-svarut-v2",
   "devDependencies": {
     "ava": "0.18.2",
     "axios": "0.15.3",
     "coveralls": "2.12.0",
-    "nsp": "2.6.3",
     "nyc": "10.1.2",
     "standard": "9.0.2",
     "test-listen": "1.0.1"
