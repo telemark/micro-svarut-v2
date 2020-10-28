@@ -50,7 +50,7 @@
   },
   "homepage": "https://github.com/telemark/micro-svarut-v2",
   "devDependencies": {
-    "ava": "2.4.0",
+    "ava": "3.13.0",
     "coveralls": "3.0.9",
     "nyc": "15.0.0",
     "standard": "14.3.1"
